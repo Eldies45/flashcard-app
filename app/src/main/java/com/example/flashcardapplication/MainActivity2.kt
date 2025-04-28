@@ -1,12 +1,15 @@
 package com.example.flashcardapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+
 
 class MainActivity2 : AppCompatActivity() {
     private val questions = arrayOf(
@@ -36,18 +39,49 @@ class MainActivity2 : AppCompatActivity() {
         val btnFalse: Button = findViewById(R.id.button3)
         val btnNext: Button = findViewById(R.id.button4)
 
-
-
+        questionLoading()
         btnTrue.setOnClickListener {
+            answerChecking(true)
 
         }
 
         btnFalse.setOnClickListener {
+            answerChecking(false)
 
         }
 
         btnNext.setOnClickListener {
+            currentQuestionIndex++
+            if (currentQuestionIndex < questions.size) {
+                questionLoading()
+
+            } else {
+                // Finished all questions, go to ScoreActivity
+                val intent = Intent(this, MainActivity3::class.java)
+                intent.putExtra("score", score)
+                intent.putExtra("questions", questions)
+                intent.putExtra("answers", answers)
+                startActivity(intent)
+                finish()
+            }
 
         }
+    }
+
+    private fun MainActivity2.questionLoading() {
+        txtQuestion.text = questions[currentQuestionIndex]
+        btnTrue.isEnabled = true
+        btnFalse.isEnabled = true
+    }
+    private fun answerChecking(userAnswer: Boolean) {
+        if (userAnswer == answers[currentQuestionIndex]) {
+            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show()
+                score++
+        } else {
+            Toast.makeText(this, "Incorrect!", Toast.LENGTH_SHORT).show()
+        }
+        // Disable the buttons after the attempt to avoid cheating
+        btnTrue.isEnabled = false
+        btnFalse.isEnabled = false
     }
 }
