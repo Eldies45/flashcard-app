@@ -31,5 +31,23 @@ class MainActivity2 : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main2)
 
+        val txtQuestion: TextView = findViewById(R.id.textView2)
+        val btnTrue: Button = findViewById(R.id.button2)
+        val btnFalse: Button = findViewById(R.id.button3)
+        val btnNext: Button = findViewById(R.id.button4)
+
+
+
+        btnTrue.setOnClickListener {
+
+        }
+
+        btnFalse.setOnClickListener {
+
+        }
+
+        btnNext.setOnClickListener {
+
         }
     }
+}
