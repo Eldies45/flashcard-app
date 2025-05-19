@@ -27,6 +27,8 @@ class MainActivity3 : AppCompatActivity() {
         val txtFeedback: TextView = findViewById(R.id.textView4)
         val btnReview: Button = findViewById(R.id.button7)
         val btnExit: Button = findViewById(R.id.button6)
+        val results = intent.getStringArrayListExtra("result")
+        val feedBack: TextView = findViewById<TextView>(R.id.textView6)
 
         txtScore.text = "You scored $score out of ${questions.size}."
 
@@ -39,15 +41,16 @@ class MainActivity3 : AppCompatActivity() {
         }
 
         btnReview.setOnClickListener {
-
-
-            val theBuilt = StringBuilder()
-            for (i in questions.indices) {
-                theBuilt.append("${i + 1}. ${questions[i]} \nAnswer: ${if (answers[i]) "True" else "False"}\n\n")
-            }
+            feedBack.text = results?.joinToString("\n") ?:"Ther is no answers yet"
 
 
             }
+
+
+
+        btnExit.setOnClickListener {
+            finishAffinity()
+        }
 
 
 

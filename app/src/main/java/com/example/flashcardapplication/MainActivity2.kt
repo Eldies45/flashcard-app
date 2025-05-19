@@ -1,6 +1,7 @@
 package com.example.flashcardapplication
 
 import android.annotation.SuppressLint
+import android.app.admin.TargetUser
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -23,7 +24,9 @@ class MainActivity2 : AppCompatActivity() {
     )
 
     private val answers = booleanArrayOf(true, true, false, false, true)
+    private val userResults = mutableListOf<String>()
     private var ansWered = false
+
     private var currentQuestionIndex = 0
     private var score = 0
     private lateinit var txtQuestion: TextView
@@ -49,6 +52,7 @@ class MainActivity2 : AppCompatActivity() {
         btnNext.isEnabled = false
         txtQuestion.text=questions[currentQuestionIndex]
         btnTrue.setOnClickListener {
+            anscheck(true)
             ansWered = true
             appResponce.text = "True"
         btnTrue.isEnabled = false
@@ -57,6 +61,7 @@ class MainActivity2 : AppCompatActivity() {
         }
 
         btnFalse.setOnClickListener {
+            anscheck(false)
             ansWered = true
             appResponce.text = "False"
         btnFalse.isEnabled = false
@@ -65,16 +70,11 @@ class MainActivity2 : AppCompatActivity() {
         }
 
         btnNext.setOnClickListener {
-            ansWered = false
-
             btnNext.isEnabled = false
            btnFalse.isEnabled = true
             btnTrue.isEnabled = true
-            if (currentQuestionIndex < questions.size) {
-                for (i in questions.indices) {
-                    println("Q: $")
-                }
-                    score++
+            if (currentQuestionIndex+1 < questions.size) {
+
 
                 currentQuestionIndex++
                 updateQuestion()
@@ -85,6 +85,7 @@ class MainActivity2 : AppCompatActivity() {
                 intent.putExtra("score", score)
                 intent.putExtra("questions", questions)
                 intent.putExtra("answers", answers)
+                intent.putStringArrayListExtra("result", ArrayList(userResults))
                 startActivity(intent)
             }
         }
@@ -97,7 +98,24 @@ class MainActivity2 : AppCompatActivity() {
 
 
     }
+    private fun anscheck (userAns: Boolean) {
+        val correctAns = answers[currentQuestionIndex]
+        val txtResult =
+            if ( userAns==correctAns) {
+            score++
+            "Q${currentQuestionIndex +1 } Correct"
+        } else{
+                "Q${currentQuestionIndex +1 }: Incorrect"
+            }
+        userResults.add(txtResult)
+    }
+    fun main() {
+        for (i in questions.indices) {
+        println("Q: ${questions[i]}")
+        println("answer: ${answers[i]}")
+    }
 
+    }
 
 
 
