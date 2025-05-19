@@ -1,5 +1,6 @@
 package com.example.flashcardapplication
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -12,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 
 
 class MainActivity2 : AppCompatActivity() {
+
     private val questions = arrayOf(
         "Madame C.G. walker was the first american’s black millionaire.",
         "The French sculptor Frédéric Auguste created the statue of liberty.",
@@ -20,41 +22,57 @@ class MainActivity2 : AppCompatActivity() {
         "The Titanic sank in 1912."
     )
 
-    private val answers = arrayOf(true, true, false, false, true)
-
+    private val answers = booleanArrayOf(true, true, false, false, true)
+    private var ansWered = false
     private var currentQuestionIndex = 0
     private var score = 0
-
     private lateinit var txtQuestion: TextView
     private lateinit var btnTrue: Button
     private lateinit var btnFalse: Button
     private lateinit var btnNext: Button
+    private lateinit var appResponce: TextView
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main2)
 
-        val txtQuestion: TextView = findViewById(R.id.textView2)
-        val btnTrue: Button = findViewById(R.id.button2)
-        val btnFalse: Button = findViewById(R.id.button3)
-        val btnNext: Button = findViewById(R.id.button4)
+        txtQuestion = findViewById(R.id.textView2)
+        btnTrue = findViewById(R.id.button2)
+        btnFalse = findViewById(R.id.button3)
+        btnNext = findViewById(R.id.button4)
+        appResponce = findViewById(R.id.textView7)
 
-        questionLoading()
+
+
+        btnNext.isEnabled = false
+        txtQuestion.text=questions[currentQuestionIndex]
         btnTrue.setOnClickListener {
-            answerChecking(true)
-
+            ansWered = true
+            appResponce.text = "True"
+        btnTrue.isEnabled = false
+            btnFalse.isEnabled = false
+            btnNext.isEnabled = true
         }
 
         btnFalse.setOnClickListener {
-            answerChecking(false)
-
+            ansWered = true
+            appResponce.text = "False"
+        btnFalse.isEnabled = false
+            btnTrue.isEnabled = false
+            btnNext.isEnabled = true
         }
 
         btnNext.setOnClickListener {
-            currentQuestionIndex++
-            if (currentQuestionIndex < questions.size) {
-                questionLoading()
 
+            btnNext.isEnabled = false
+           btnFalse.isEnabled = true
+            btnTrue.isEnabled = true
+            if (currentQuestionIndex+1 < questions.size) {
+                score++
+                currentQuestionIndex++
+                updateQuestion()
             } else {
                 // Finished all questions, go to ScoreActivity
                 val intent = Intent(this, MainActivity3::class.java)
@@ -62,26 +80,20 @@ class MainActivity2 : AppCompatActivity() {
                 intent.putExtra("questions", questions)
                 intent.putExtra("answers", answers)
                 startActivity(intent)
-                finish()
             }
-
         }
+
+
     }
 
-    private fun MainActivity2.questionLoading() {
+    private fun updateQuestion() {
         txtQuestion.text = questions[currentQuestionIndex]
-        btnTrue.isEnabled = true
-        btnFalse.isEnabled = true
+
+
     }
-    private fun answerChecking(userAnswer: Boolean) {
-        if (userAnswer == answers[currentQuestionIndex]) {
-            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show()
-                score++
-        } else {
-            Toast.makeText(this, "Incorrect!", Toast.LENGTH_SHORT).show()
-        }
-        // Disable the buttons after the attempt to avoid cheating
-        btnTrue.isEnabled = false
-        btnFalse.isEnabled = false
-    }
+
+
+
+
 }
+
