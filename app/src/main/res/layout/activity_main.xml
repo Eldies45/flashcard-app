@@ -5,25 +5,27 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/flashcard"
+    android:background="@drawable/ebru"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="393dp"
-        android:layout_height="228dp"
+        android:layout_width="374dp"
+        android:layout_height="167dp"
+        android:background="#FF5252"
+        android:backgroundTint="#FF6E40"
         android:text="WELCOME TO THE FLASHCARD APP!!"
         android:textAlignment="center"
-        android:textColor="@color/design_default_color_secondary"
+        android:textColor="#F9FBE7"
         android:textDirection="firstStrongRtl"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.618" />
+        app:layout_constraintVertical_bias="0.54" />
 
     <Button
         android:id="@+id/button"
