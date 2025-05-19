@@ -65,14 +65,20 @@ class MainActivity2 : AppCompatActivity() {
         }
 
         btnNext.setOnClickListener {
+            ansWered = false
 
             btnNext.isEnabled = false
            btnFalse.isEnabled = true
             btnTrue.isEnabled = true
-            if (currentQuestionIndex+1 < questions.size) {
-                score++
+            if (currentQuestionIndex < questions.size) {
+                for (i in questions.indices) {
+                    println("Q: $")
+                }
+                    score++
+
                 currentQuestionIndex++
                 updateQuestion()
+
             } else {
                 // Finished all questions, go to ScoreActivity
                 val intent = Intent(this, MainActivity3::class.java)
