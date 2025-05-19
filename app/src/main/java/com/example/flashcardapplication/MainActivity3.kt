@@ -39,7 +39,7 @@ class MainActivity3 : AppCompatActivity() {
         }
 
         btnReview.setOnClickListener {
-            val txtReview: TextView = findViewById(R.id.textView6)
+
 
             val theBuilt = StringBuilder()
             for (i in questions.indices) {

@@ -5,14 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/eldo"
+    android:background="@drawable/daaa"
     tools:context=".MainActivity3">
 
     <Button
         android:id="@+id/button6"
         android:layout_width="130dp"
         android:layout_height="80dp"
-        android:backgroundTint="@color/material_dynamic_neutral20"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:text="Exit"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -27,8 +27,9 @@
         android:id="@+id/textView3"
         android:layout_width="401dp"
         android:layout_height="120dp"
-        android:textColor="#64FFDA"
-        android:textSize="24sp"
+        android:textColor="#536DFE"
+        android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +41,9 @@
         android:layout_width="401dp"
         android:layout_height="120dp"
         android:backgroundTint="#64FFDA"
-        android:textSize="24sp"
+        android:textColor="#FFAB40"
+        android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,6 +56,7 @@
         android:layout_height="100dp"
         android:text="SCORE"
         android:textAlignment="center"
+        android:textColor="#FFFF00"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,14 +83,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.958" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="401dp"
-        android:layout_height="130dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.691" />
 </androidx.constraintlayout.widget.ConstraintLayout>
