@@ -28,7 +28,7 @@
         android:layout_width="401dp"
         android:layout_height="120dp"
         android:background="@color/white"
-        android:textColor="#536DFE"
+        android:textColor="#FFD740"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
