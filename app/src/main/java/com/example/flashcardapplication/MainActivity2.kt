@@ -15,6 +15,8 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity2 : AppCompatActivity() {
 
+    // Adding questions to array
+
     private val questions = arrayOf(
         "Madame C.G. walker was the first american’s black millionaire.",
         "The French sculptor Frédéric Auguste created the statue of liberty.",
@@ -22,8 +24,11 @@ class MainActivity2 : AppCompatActivity() {
         "Julius Caesar was a Roman emperor.",
         "The Titanic sank in 1912."
     )
-
+    // Adding answers to array
     private val answers = booleanArrayOf(true, true, false, false, true)
+
+    // Assigning values to varibles
+
     private val userResults = mutableListOf<String>()
     private var ansWered = false
 
@@ -41,13 +46,15 @@ class MainActivity2 : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main2)
 
+        // Giving to values their assigned identifications
+
         txtQuestion = findViewById(R.id.textView2)
         btnTrue = findViewById(R.id.button2)
         btnFalse = findViewById(R.id.button3)
         btnNext = findViewById(R.id.button4)
         appResponce = findViewById(R.id.textView7)
 
-
+       // Set the button true on click listener for the answers
 
         btnNext.isEnabled = false
         txtQuestion.text=questions[currentQuestionIndex]
@@ -59,6 +66,7 @@ class MainActivity2 : AppCompatActivity() {
             btnFalse.isEnabled = false
             btnNext.isEnabled = true
         }
+        // Setting button false on click listener for the answers
 
         btnFalse.setOnClickListener {
             anscheck(false)
@@ -68,11 +76,15 @@ class MainActivity2 : AppCompatActivity() {
             btnTrue.isEnabled = false
             btnNext.isEnabled = true
         }
+        // Setting the next button on click listener to allow to go to the next step
 
         btnNext.setOnClickListener {
             btnNext.isEnabled = false
            btnFalse.isEnabled = true
             btnTrue.isEnabled = true
+
+            // Conditioning the next button for the score to be saved
+
             if (currentQuestionIndex+1 < questions.size) {
 
 
@@ -80,7 +92,9 @@ class MainActivity2 : AppCompatActivity() {
                 updateQuestion()
 
             } else {
+
                 // Finished all questions, go to ScoreActivity
+
                 val intent = Intent(this, MainActivity3::class.java)
                 intent.putExtra("score", score)
                 intent.putExtra("questions", questions)
@@ -92,12 +106,15 @@ class MainActivity2 : AppCompatActivity() {
 
 
     }
+    // Checking the current indexes of the arrays
 
     private fun updateQuestion() {
         txtQuestion.text = questions[currentQuestionIndex]
 
 
     }
+    // checking if the user answer is the correct answer
+
     private fun anscheck (userAns: Boolean) {
         val correctAns = answers[currentQuestionIndex]
         val txtResult =
@@ -109,13 +126,12 @@ class MainActivity2 : AppCompatActivity() {
             }
         userResults.add(txtResult)
     }
-    fun main() {
-        for (i in questions.indices) {
-        println("Q: ${questions[i]}")
-        println("answer: ${answers[i]}")
-    }
+    //  Title: Kotlin Flashcard Application
+    //  author: Eldies Tshiseke
+    //  Version: 1.0
+    //  Available at:
 
-    }
+
 
 
 

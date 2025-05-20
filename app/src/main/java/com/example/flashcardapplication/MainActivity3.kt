@@ -18,7 +18,7 @@ class MainActivity3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main3)
-
+     // Giving to values their assigned identifications
         val score = intent.getIntExtra("score", 0)
         questions = intent.getStringArrayExtra("questions") ?: arrayOf()
         answers = intent.getBooleanArrayExtra("answers")?.toTypedArray() ?: arrayOf()
@@ -29,7 +29,7 @@ class MainActivity3 : AppCompatActivity() {
         val btnExit: Button = findViewById(R.id.button6)
         val results = intent.getStringArrayListExtra("result")
         val feedBack: TextView = findViewById<TextView>(R.id.textView6)
-
+    // Displaying the Score
         txtScore.text = "You scored $score out of ${questions.size}."
 
         // Personalized feedback
@@ -39,15 +39,15 @@ class MainActivity3 : AppCompatActivity() {
             else -> "Keep practicing! You'll improve!"
 
         }
-
+        // Seting the review button on click listener to review answers
         btnReview.setOnClickListener {
-            feedBack.text = results?.joinToString("\n") ?:"Ther is no answers yet"
+            feedBack.text = results?.joinToString("\n") ?:"There is no answers yet"
 
 
             }
 
 
-
+        // Setting the exit button on click listener to exit the application
         btnExit.setOnClickListener {
             finishAffinity()
         }
@@ -57,3 +57,7 @@ class MainActivity3 : AppCompatActivity() {
 
         }
     }
+//  Title: Kotlin Flashcard Application
+//  author: Eldies Tshiseke
+//  Version: 1.0
+//  Available at:
