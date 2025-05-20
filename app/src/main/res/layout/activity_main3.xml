@@ -39,21 +39,21 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="398dp"
-        android:layout_height="78dp"
+        android:layout_width="399dp"
+        android:layout_height="94dp"
         android:background="#43FFFFFF"
         android:backgroundTint="@color/white"
         android:gravity="center"
         android:textAlignment="center"
-        android:textColor="#FFAB40"
+        android:textColor="#FFD740"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.769"
+        app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473" />
+        app:layout_constraintVertical_bias="0.472" />
 
     <TextView
         android:id="@+id/textView5"
