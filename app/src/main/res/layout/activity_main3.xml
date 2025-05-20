@@ -18,7 +18,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintHorizontal_bias="0.017"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.958" />
@@ -28,7 +28,7 @@
         android:layout_width="401dp"
         android:layout_height="120dp"
         android:background="@color/white"
-        android:textColor="#FFD740"
+        android:textColor="@color/black"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,11 +41,11 @@
         android:id="@+id/textView4"
         android:layout_width="399dp"
         android:layout_height="94dp"
-        android:background="#43FFFFFF"
-        android:backgroundTint="@color/white"
+        android:background="#FFFF00"
+        android:backgroundTint="#AAFF6E40"
         android:gravity="center"
         android:textAlignment="center"
-        android:textColor="#FFD740"
+        android:textColor="@color/black"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -83,7 +83,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
+        app:layout_constraintHorizontal_bias="0.982"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.958" />
@@ -92,7 +92,7 @@
         android:id="@+id/textView6"
         android:layout_width="397dp"
         android:layout_height="158dp"
-        android:background="#47FFFFFF"
+        android:background="#94FFFFFF"
         android:text="QUESTIONS YOU GOT RIGHT:"
         android:textAlignment="textStart"
         android:textColor="@color/black"
@@ -103,5 +103,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.724" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#FF6E40"
+        android:text="RESTART"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.958" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

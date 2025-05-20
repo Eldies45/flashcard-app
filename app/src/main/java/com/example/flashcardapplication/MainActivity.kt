@@ -27,4 +27,4 @@ class MainActivity : AppCompatActivity() {
 //  Title: Kotlin Flashcard Application
 //  author: Eldies Tshiseke
 //  Version: 1.0
-//  Available at:
+//  Available at: https://www.youtube.com/watch?v=UXGDPHNAL90

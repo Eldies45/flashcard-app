@@ -1,6 +1,7 @@
 package com.example.flashcardapplication
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -29,6 +30,7 @@ class MainActivity3 : AppCompatActivity() {
         val btnExit: Button = findViewById(R.id.button6)
         val results = intent.getStringArrayListExtra("result")
         val feedBack: TextView = findViewById<TextView>(R.id.textView6)
+        val btnRestart: Button = findViewById<Button>(R.id.button5)
     // Displaying the Score
         txtScore.text = "You scored $score out of ${questions.size}."
 
@@ -51,7 +53,13 @@ class MainActivity3 : AppCompatActivity() {
         btnExit.setOnClickListener {
             finishAffinity()
         }
+        // Setting the Restart button on click listener to start over the quiz
+        btnRestart.setOnClickListener {
+            val intent = Intent(this, MainActivity2::class.java)
+            startActivity(intent)
+            finish()
 
+        }
 
 
 
@@ -60,4 +68,4 @@ class MainActivity3 : AppCompatActivity() {
 //  Title: Kotlin Flashcard Application
 //  author: Eldies Tshiseke
 //  Version: 1.0
-//  Available at:
+//  Available at: https://www.youtube.com/watch?v=UXGDPHNAL90
