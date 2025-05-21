@@ -14,6 +14,7 @@
         android:layout_height="130dp"
         android:background="#FF5252"
         android:backgroundTint="#FF6E40"
+        android:gravity="center"
         android:text="WELCOME TO THE FLASHCARD APP!!"
         android:textAlignment="center"
         android:textColor="#F9FBE7"
