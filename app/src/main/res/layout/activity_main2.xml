@@ -47,6 +47,7 @@
         android:layout_height="70dp"
         android:backgroundTint="#FF6E40"
         android:text="FALSE"
+        android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
