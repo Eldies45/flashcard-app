@@ -95,7 +95,7 @@
         android:layout_height="158dp"
         android:background="#94FFFFFF"
         android:text="QUESTIONS YOU GOT RIGHT:"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
