@@ -32,7 +32,7 @@ class MainActivity3 : AppCompatActivity() {
         val feedBack: TextView = findViewById<TextView>(R.id.textView6)
         val btnRestart: Button = findViewById<Button>(R.id.button5)
     // Displaying the Score
-        txtScore.text = "You scored $score out of ${questions.size}."
+        txtScore.text = " $score / ${questions.size}."
 
         // Personalized feedback
         txtFeedback.text = when {
